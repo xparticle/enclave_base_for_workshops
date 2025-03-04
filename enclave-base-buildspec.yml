@@ -1,0 +1,18 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+version: 0.2
+env:
+  shell: bash
+phases:
+  install:
+    commands:
+      - chmod +x cdk/lib/prereqs/scripts/*.sh
+  pre_build:
+    commands:
+      - cdk/lib/prereqs/scripts/pre_build.sh
+  build:
+    commands:
+      - cdk/lib/prereqs/scripts/build.sh
+  post_build:
+    commands:
+      - cdk/lib/prereqs/scripts/post_build.sh
