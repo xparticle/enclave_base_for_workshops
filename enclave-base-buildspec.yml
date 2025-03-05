@@ -6,13 +6,13 @@ env:
 phases:
   install:
     commands:
-      - chmod +x cdk/lib/prereqs/scripts/*.sh
+      - chmod +x scripts/*.sh
   pre_build:
     commands:
-      - cdk/lib/prereqs/scripts/pre_build.sh
+      - scripts/pre_build.sh
   build:
     commands:
-      - cdk/lib/prereqs/scripts/build.sh
+      - scripts/build.sh
   post_build:
     commands:
-      - cdk/lib/prereqs/scripts/post_build.sh
+      - scripts/post_build.sh
