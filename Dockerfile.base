@@ -89,7 +89,7 @@ COPY --from=builder /usr/lib64/libnsm.so /usr/lib64/libnsm.so /app/
 COPY --from=builder /usr/bin/kmstool_enclave_cli /app/
 RUN dnf install python python-pip findutils wget tar gzip gcc glibc-devel jq openssl xxd unzip gcc-c++ python3-devel -y 
 RUN dnf install iproute socat -y
-RUN pip install -U setuptools wheel
+RUN pip install --ignore-installed setuptools wheel
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN ./aws/install
